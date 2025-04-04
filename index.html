@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <link href="/src/css/styles.css" rel="stylesheet" />
   </head>
   <body>
@@ -73,7 +77,13 @@
               Интуитивный интерфейс
             </h4>
             <p class="text-xl dark:text-slate-200 text-slate-600">
-              Порядок заполнения разделов для формирования ИУЛ соответствует форме № 15 из приложения Х рекомендуемых правил ГОСТ Р 21.101-2020.</p><p class="text-xl dark:text-slate-200 text-slate-600 mt-4">Настраиваемые опции позволяют учитывать требования к выходной форме листа.</p>
+              Порядок заполнения разделов для формирования ИУЛ соответствует
+              форме № 15 из приложения Х рекомендуемых правил ГОСТ Р
+              21.101-2020.
+            </p>
+            <p class="text-xl dark:text-slate-200 text-slate-600 mt-4">
+              Настраиваемые опции позволяют учитывать требования к выходной
+              форме листа.
             </p>
           </div>
           <div class="flex flex-col flex-1/2">
@@ -112,7 +122,13 @@
               Удобно подписывать
             </h4>
             <p class="text-xl dark:text-slate-200 text-slate-600">
-              Добавляя строки с информацией о лицах, подписавших документ, не нужно беспокоиться о том, что при формировании нового ИУЛ придется заполнять этот раздел заново – просто включите опцию «Запомнить».</p><p class="text-xl dark:text-slate-200 text-slate-600 mt-4">Если вы предпочитаете заполнять этот раздел от руки, достаточно оставить поля пустыми.</p>
+              Добавляя строки с информацией о лицах, подписавших документ, не
+              нужно беспокоиться о том, что при формировании нового ИУЛ придется
+              заполнять этот раздел заново – просто включите опцию «Запомнить».
+            </p>
+            <p class="text-xl dark:text-slate-200 text-slate-600 mt-4">
+              Если вы предпочитаете заполнять этот раздел от руки, достаточно
+              оставить поля пустыми.
             </p>
           </div>
         </div>
@@ -212,6 +228,194 @@
             *.HTML
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Вопросы и ответы -->
+    <section class="mt-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <h3
+          class="text-center text-4xl font-extrabold lg:text-5xl mb-8 text-gray-700"
+        >
+          Вопросы и ответы
+        </h3>
+
+        <div x-data="{ openIndex: null }" class="space-y-4">
+          <!-- Аккордеон секция 1 -->
+          <div class="mb-0">
+            <button
+              @click="openIndex === 1 ? openIndex = null : openIndex = 1"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+            >
+              <span class="font-semibold"
+                >Как начать пользоваться конструктором?</span
+              >
+              <svg
+                class="w-5 h-5 transform"
+                :class="openIndex === 1 ? 'rotate-180' : 'rotate-0'"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              x-show="openIndex === 1"
+              class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+            >
+              <p>
+                Чтобы начать пользоваться конструктором ИУЛ, вам необходимо
+                зарегистрироваться. После регистрации на указанный вами email
+                придёт письмо с подтверждением вашего электронного почтового
+                ящика. Подтвердив свою учетную запись, вам будет доступен весь
+                функционал сервиса.
+              </p>
+            </div>
+          </div>
+
+          <!-- Аккордеон секция 2 -->
+          <div class="mb-0">
+            <button
+              @click="openIndex === 2 ? openIndex = null : openIndex = 2"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+            >
+              <span class="font-semibold"
+                >Должен ли я что-то устанавливать на свой компьютер?</span
+              >
+              <svg
+                class="w-5 h-5 transform"
+                :class="openIndex === 2 ? 'rotate-180' : 'rotate-0'"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              x-show="openIndex === 2"
+              class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+            >
+              <p>
+                Конструктор ИУЛ работает через веб-браузер, как любое
+                SaaS-приложение. Это очень удобно, ведь вам не нужно
+                беспокоиться о скачивании и установке программ. Просто зайдите в
+                браузер, и вы готовы к работе из любой места, где есть интернет!
+              </p>
+            </div>
+          </div>
+
+          <!-- Аккордеон секция 3 -->
+          <div class="mb-0">
+            <button
+              @click="openIndex === 3 ? openIndex = null : openIndex = 3"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+            >
+              <span class="font-semibold"
+                >Соответствует ли выходная форма ИУЛ требованиям действующего
+                законодательства?</span
+              >
+              <svg
+                class="w-5 h-5 transform"
+                :class="openIndex === 3 ? 'rotate-180' : 'rotate-0'"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              x-show="openIndex === 3"
+              class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+            >
+              <p>
+                Да, соответствует. При формировании
+                информационно-удостоверяющего листа (ИУЛ) приняты положения
+                <i
+                  >ГОСТ Р 21.101-2020 «Система проектной документации для
+                  строительства. Основные требования к проектной и рабочей
+                  документации»</i
+                >, действующего в настоящее время.
+              </p>
+            </div>
+          </div>
+
+          <!-- Аккордеон секция 4 -->
+          <div class="mb-0">
+            <button
+              @click="openIndex === 4 ? openIndex = null : openIndex = 4"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 border-b-1"
+            >
+              <span class="font-semibold">Если у меня остались вопросы?</span>
+              <svg
+                class="w-5 h-5 transform"
+                :class="openIndex === 4 ? 'rotate-180' : 'rotate-0'"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              x-show="openIndex === 4"
+              class="p-5 border border-b-1 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+            >
+              <p>
+                Конечно, если у вас остались вопросы, вы всегда можете
+                обратиться за помощью! После регистрации вам будет доступен
+                раздел «Техподдержка», где вы сможете задать вопрос, указать на
+                ошибку или написать отзыв о работе конструктора. Мы всегда рады
+                помочь!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h3
+          class="text-center text-4xl font-extrabold lg:text-5xl mb-8 text-gray-700"
+        >
+          Начните прямо сейчас!
+        </h3>
+        <h4 class="text-center text-xl text-slate-600 mb-16">
+          <a href="/login" class="font-medium underline text-sky-700"
+            >Войдите</a
+          >
+          или
+          <a href="/register" class="font-medium underline text-sky-700"
+            >зарегистрируйтесь</a
+          >.
+        </h4>
       </div>
     </section>
   </body>
